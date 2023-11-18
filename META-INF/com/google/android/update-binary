@@ -540,6 +540,7 @@ OLD_PATH="$PATH";
 export PATH="$AKHOME/bin:$AKHOME/tools:$PATH";
 
 if [ -f banner ]; then
+  ui_print " " " ";
   ui_printfile banner;
   ui_print " " " ";
 fi;
@@ -562,6 +563,9 @@ do_versioncheck;
 do_levelcheck;
 do_vendorlevelcheck;
 
+# used by kyriepatch
+export ZIPFILE
+
 ui_print "Installing...";
 # hack to maintain support for anykernel.sh files that weren't updated correctly along with the AK core
 CORE=$(grep -oE 'ak.*core.sh' anykernel.sh);
@@ -581,6 +585,7 @@ if [ "$(file_getprop anykernel.sh do.cleanup)" == 1 ]; then
   cleanup;
 fi;
 
+ui_print " " "Enjoy With Kurumi^_^";
 ui_print " " "Done!";
 export PATH="$OLD_PATH";
 unset OLD_PATH OUTFD ZIPFILE;
