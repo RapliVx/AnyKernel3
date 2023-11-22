@@ -1,4 +1,5 @@
 # ignore 
 Image
-dtbo.img
 dtb.img
+dtbo/oss/dtbo.img
+dtbo/miui/dtbo.img
