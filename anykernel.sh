@@ -10,16 +10,7 @@ do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=mi8937
-device.name2=land
-device.name3=landtoni
-device.name4=riva
-device.name5=rolex
-device.name6=rova
-device.name7=santoni
-device.name8=ugg
-device.name9=ugglite
-device.name10=ulysse
+device.name1=lavender
 supported.versions=8.1.0 - 12
 supported.patchlevels=
 '; } # end properties
