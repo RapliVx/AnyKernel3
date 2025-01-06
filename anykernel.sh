@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=kinesis Kernel by clarencelol
+kernel.string=HyperX Kernel by ErOneSoul
 do.devicecheck=1
 do.modules=0
 do.systemless=1
