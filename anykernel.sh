@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Installing Arisuu Kernel System. . .
+kernel.string=Installing Inazuma Kernel System. . .
 do.devicecheck=1
 do.modules=0
 do.systemless=1
