@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=HyperX Kernel by ErOneSoul
+kernel.string=Katyusha Kernel by ErOneSoul
 do.devicecheck=1
 do.modules=0
 do.systemless=1
