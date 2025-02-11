@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=POCO X3 Kernel by xradens
+kernel.string=Trailblazer Kernel by ErOneSoul
 do.devicecheck=1
 do.modules=0
 do.systemless=1
