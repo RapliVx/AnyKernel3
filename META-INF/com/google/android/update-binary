@@ -167,7 +167,7 @@ mount_all() {
     fi;
   done;
   if is_mounted /system_root; then
-    mount_apex;
+    #mount_apex;
     mount -o bind /system_root$system /system && echo "/system (bind)" >&2;
   fi;
   echo " " >&2;
@@ -179,7 +179,7 @@ umount_all() {
     umount /system;
     umount -l /system;
   fi) 2>/dev/null;
-  umount_apex;
+  #umount_apex;
   (if [ ! -d /postinstall/tmp ]; then
     umount /system_root;
     umount -l /system_root;
@@ -537,7 +537,7 @@ if [ $? != 0 -o -z "$(ls bin)" ]; then
   abort "Busybox setup failed. Aborting...";
 fi;
 OLD_PATH="$PATH";
-export PATH="$AKHOME/tools:$AKHOME/bin:$PATH";
+export PATH="$AKHOME/bin:$AKHOME/tools:$PATH";
 
 if [ -f banner ]; then
   ui_printfile banner;
@@ -552,6 +552,7 @@ if [ -f version ]; then
   ui_print " ";
 fi;
 ui_print " " "AnyKernel3 by osm0sis @ xda-developers" " ";
+ui_print " " "SphinX Kernel By noticesa@itseunbinn" " ";
 grep -oE 'AK_BASE.*' META-INF/com/google/android/updater-script >&2;
 ui_print " ";
 
