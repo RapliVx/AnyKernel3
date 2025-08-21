@@ -4,17 +4,15 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=Katyusha Kernel by ErOneSoul
+kernel.string=KlaxoCORE by ErOneSoul
 do.devicecheck=1
 do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=miatoll
-device.name2=curtana
-device.name3=excalibur
-device.name4=gram
-device.name5=joyeuse
+device.name1=beryllium
+device.name2=PocoF1
+device.name3=PocophoneF1
 supported.versions=
 supported.patchlevels=
 supported.vendorpatchlevels=
