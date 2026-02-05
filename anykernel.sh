@@ -10,13 +10,9 @@ do.modules=0
 do.systemless=0
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=topaz
-device.name2=tapas
-device.name3=sapphiren
-device.name4=sapphire
-device.name5=xun
-device.name6=creek
-supported.versions=13-16
+device.name1=
+device.name2=
+supported.versions=
 supported.patchlevels=
 supported.vendorpatchlevels=
 '; } # end properties
