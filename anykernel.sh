@@ -4,18 +4,14 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=Wild Kernels by TheWildJames aka Morgan Weedman
-do.devicecheck=0
+kernel.string=
+do.devicecheck=1
 do.modules=0
 do.systemless=0
 do.cleanup=1
 do.cleanuponabort=0
-do.check_boot_version=0
 device.name1=
 device.name2=
-device.name3=
-device.name4=
-device.name5=
 supported.versions=
 supported.patchlevels=
 supported.vendorpatchlevels=
@@ -33,48 +29,13 @@ no_magisk_check=1
 # import functions/variables and setup patching - see for reference (DO NOT REMOVE)
 . tools/ak3-core.sh
 
-# GKI check
-kernel_version=$(cat /proc/version | awk -F '-' '{print $1}' | awk '{print $3}')
-case $kernel_version in
-    5.1*) ksu_supported=true ;;
-    6.1*) ksu_supported=true ;;
-    6.6*) ksu_supported=true ;;
-    *) ksu_supported=false ;;
-esac
-
-ui_print " " "  -> Wild Kernels Supported: $ksu_supported"
-$ksu_supported || abort "  -> Non-GKI device, abort."
-
 # boot install
-split_boot
-
-if [ -f "$SPLITIMG/ramdisk.cpio" ]; then
-    unpack_ramdisk
-    write_boot
+# Script langsung memproses instalasi tanpa pemilihan kernel
+if [ -L "/dev/block/bootdevice/by-name/init_boot_a" -o -L "/dev/block/by-name/init_boot_a" ]; then
+  split_boot # for devices with init_boot ramdisk
+  flash_boot # for devices with init_boot ramdisk
 else
-    flash_boot
+  dump_boot # use split_boot to skip ramdisk unpack, e.g. for devices with init_boot ramdisk
+  write_boot # use flash_boot to skip ramdisk repack, e.g. for devices with init_boot ramdisk
 fi
-
-ui_print " "
-ui_print "WildKernels Telegram Channel:"
-ui_print "https://t.me/WildKernels"
-ui_print " "
-ui_print "WildKernels Website:"
-ui_print "https://wildkernels.dev"
-ui_print " "
-ui_print "Wild_KSU GitHub Repository:"
-ui_print "https://github.com/WildKernels/Wild_KSU"
-ui_print "KernelSU-Next fork focused on customization and root-hiding features!"
-ui_print " "
-ui_print "GKI_KernelSU_SUSFS GitHub Repository:"
-ui_print "https://github.com/WildKernels/GKI_KernelSU_SUSFS"
-ui_print "GKI kernels with KernelSU and SUSFS."
-ui_print " "
-ui_print "OnePlus_KernelSU_SUSFS GitHub Repository:"
-ui_print "https://github.com/WildKernels/OnePlus_KernelSU_SUSFS"
-ui_print "OnePlus kernels with KernelSU and SUSFS."
-ui_print " "
-ui_print "Samsung_KernelSU_SUSFS GitHub Repository:"
-ui_print "https://github.com/WildKernels/Samsung_KernelSU_SUSFS"
-ui_print "Samsung kernels with KernelSU and SUSFS."
-ui_print " "
+## end boot install
