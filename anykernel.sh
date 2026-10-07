@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=Aetherium Kernel @kaminarich
+kernel.string=
 do.devicecheck=0
 do.modules=0
 do.systemless=0
